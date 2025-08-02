@@ -3,7 +3,7 @@
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": false,
+				"indexed": true,
 				"internalType": "bytes32",
 				"name": "hash",
 				"type": "bytes32"
@@ -15,7 +15,7 @@
 				"type": "address"
 			}
 		],
-		"name": "HashStored",
+		"name": "ImageStored",
 		"type": "event"
 	},
 	{
@@ -45,12 +45,12 @@
 				"type": "bytes32"
 			}
 		],
-		"name": "getImageAuthor",
+		"name": "getCID",
 		"outputs": [
 			{
-				"internalType": "address",
+				"internalType": "string",
 				"name": "",
-				"type": "address"
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -60,11 +60,30 @@
 		"inputs": [
 			{
 				"internalType": "bytes32",
-				"name": "",
+				"name": "_hash",
 				"type": "bytes32"
 			}
 		],
-		"name": "images",
+		"name": "getFormat",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_hash",
+				"type": "bytes32"
+			}
+		],
+		"name": "getImageAuthor",
 		"outputs": [
 			{
 				"internalType": "address",
@@ -81,6 +100,74 @@
 				"internalType": "bytes32",
 				"name": "_hash",
 				"type": "bytes32"
+			}
+		],
+		"name": "getTimestamp",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"name": "images",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "ipfs_cid",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "raw_format",
+				"type": "string"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "hash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "author",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "_hash",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "string",
+				"name": "_ipfs_cid",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_raw_format",
+				"type": "string"
 			}
 		],
 		"name": "storeImage",
